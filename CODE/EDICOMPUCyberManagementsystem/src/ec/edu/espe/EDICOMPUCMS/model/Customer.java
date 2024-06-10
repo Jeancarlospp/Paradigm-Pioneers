@@ -1,13 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.edu.espe.EDICOMPUCMS.model;
 
-/**
- *
- * @author Sjean
- */
 public class Customer {
+    
+    String Id;
+    String name;
+    String lastName;
+    String address;
+    String phone;
+    String email;
     
 }
