@@ -2,23 +2,16 @@
 package ec.edu.espe.EDICOMPUCMS.model;
 
 public class Computer {
-    int id;
-    String status;
-    int timeUsage;
+    private int id;
+    private String status;
 
-    public Computer(int id, String status, int timeUsage) {
+    public Computer(int id) {
         this.id = id;
-        this.status = status;
-        this.timeUsage = timeUsage;
+        this.status = "Inactive";
     }
 
-    // Getters y Setters
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getStatus() {
@@ -29,17 +22,8 @@ public class Computer {
         this.status = status;
     }
 
-    public int getTimeUsage() {
-        return timeUsage;
-    }
-
-    public void setTimeUsage(int timeUsage) {
-        this.timeUsage = timeUsage;
-    }
-
     @Override
     public String toString() {
-        return "Computer{id=" + id + ", status='" + status + "', timeUsage=" + timeUsage + '}';
+        return "Computer{" + "id=" + id + ", status='" + status + '\'' + '}';
     }
 }
-

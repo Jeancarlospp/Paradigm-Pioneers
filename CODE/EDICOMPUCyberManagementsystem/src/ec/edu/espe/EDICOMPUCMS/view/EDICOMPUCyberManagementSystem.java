@@ -2,6 +2,7 @@
 package ec.edu.espe.EDICOMPUCMS.view;
 
 import ec.edu.espe.EDICOMPUCMS.model.Login;
+import static ec.edu.espe.EDICOMPUCMS.model.MainMenu.showMainMenu;
 import ec.edu.espe.EDICOMPUCMS.model.Users;
 
 public class EDICOMPUCyberManagementSystem {
@@ -18,9 +19,5 @@ public class EDICOMPUCyberManagementSystem {
                   } else{
                       System.out.println("exiting the system");
                   }     
-    }
-    
-    public static void showMainMenu(){
-         System.out.println("Welcome to the system");
-    }
+    }  
 }
