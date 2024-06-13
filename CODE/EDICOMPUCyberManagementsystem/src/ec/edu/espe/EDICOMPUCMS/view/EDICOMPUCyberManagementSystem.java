@@ -8,7 +8,7 @@ public class EDICOMPUCyberManagementSystem {
         
         System.out.println("Welcome to the system");
         System.out.println("parangaricutirimicuaro");
-       
+        System.out.println("Holahola");
 
     }
 }
