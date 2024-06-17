@@ -5,43 +5,40 @@ package ec.edu.espe.EDICOMPUCMS.model;
 import java.util.Scanner;
 
 public class ComputerMenu {
-    private static ComputerManager computerManager = new ComputerManager(6);
+    private static CyberManager cyberManager = new CyberManager();
 
     public static void handleComputers() {
         Scanner scanner = new Scanner(System.in);
+        CyberManager cyberManager = new CyberManager();
+
         while (true) {
-            MainMenu.clearScreen();
-            System.out.println("\t\tComputers Menu");
-            System.out.println("\t\t1. Show all computers");
-            System.out.println("\t\t2. Activate a computer");
-            System.out.println("\t\t3. Deactivate a computer");
-            System.out.println("\t\t4. Return to main menu");
-            System.out.print("\t\tSelect an option: ");
+            System.out.println("1. Start a computer");
+            System.out.println("2. Stop a computer");
+            System.out.println("3. Show computer status");
+            System.out.println("4. Exit");
 
-            int option = scanner.nextInt();
-
-            switch (option) {
+            int choice = scanner.nextInt();
+            switch (choice) {
                 case 1:
-                    MainMenu.clearScreen();
-                    computerManager.showComputerStatus();
+                    System.out.println("Enter computer ID to start:");
+                    int startId = scanner.nextInt();
+                    cyberManager.startComputer(startId);
                     break;
                 case 2:
-                    System.out.print("Enter computer ID to activate: ");
-                    int activateId = scanner.nextInt();
-                    computerManager.activateComputer(activateId);
+                    System.out.println("Enter computer ID to stop:");
+                    int stopId = scanner.nextInt();
+                    cyberManager.stopComputer(stopId);
                     break;
                 case 3:
-                    System.out.print("Enter computer ID to deactivate: ");
-                    int deactivateId = scanner.nextInt();
-                    computerManager.deactivateComputer(deactivateId);
+                    cyberManager.showComputerStatus();
                     break;
                 case 4:
-                    return; // Return to main menu
+                    System.out.println("Exiting...");
+                    return;
                 default:
-                    System.out.println("Invalid option. Please try again.");
-            }
-            System.out.println("\nPress Enter to continue...");
-            try { System.in.read(); } catch (Exception e) {}
+                    System.out.println("Invalid choice.");
+                 }
+              }
+        
         }
     }
-}
