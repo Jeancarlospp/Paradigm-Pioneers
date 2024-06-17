@@ -9,7 +9,7 @@ public class EDICOMPUCyberManagementSystem {
     public static void main(String[ ] args){
         
         Users[] users ={
-          new Users("Jeancarlo","jean2005"),
+          new Users("Jeancarloooo","jean2005"),
           new Users("Andrea,","andrea2005")  
         };
         
