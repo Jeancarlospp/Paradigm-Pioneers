@@ -1,5 +1,6 @@
 package ec.edu.espe.EDICOMPUCMS.model;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,13 +39,19 @@ public class CyberManager {
 
     public void showComputerStatus() {
         for (Computer computer : computers) {
-            System.out.println("Computer " + computer.getId() + " is " +
-                               (computer.isActive() ? "active" : "inactive"));
-            if(computer.isActive()){
-                System.out.println(" (Active duration : " + computer.getActiveDuration().toMinutes() + " minutes)");
+            System.out.print("Computer " + computer.getId() + " is " +
+                             (computer.isActive() ? "active" : "inactive"));
+            if (computer.isActive()) {
+                Duration duration = computer.getActiveDuration();
+                long hours = duration.toHours();
+                long minutes = duration.toMinutes() % 60;
+                System.out.printf(" (Active duration: %d hours %d minutes)%n", hours, minutes);
             } else if (computer.getActiveDuration().toMinutes() > 0) {
-                System.out.println(" (Last active duration: " + computer.getActiveDuration().toMinutes()+ "minutes )");
-            } else{
+                Duration duration = computer.getActiveDuration();
+                long hours = duration.toHours();
+                long minutes = duration.toMinutes() % 60;
+                System.out.printf(" (Last active duration: %d hours %d minutes)%n", hours, minutes);
+            } else {
                 System.out.println();
             }
         }

@@ -11,15 +11,15 @@ public class MainMenu {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             clearScreen();
-            System.out.println("\n\n\t\tWelcome to the system");
-            System.out.println("\t\tSelect the option you want to perform: ");
-            System.out.println("\t\t1. Customers");
-            System.out.println("\t\t2. Computers");
-            System.out.println("\t\t3. Computer rental");
-            System.out.println("\t\t4. Computer reservation");
-            System.out.println("\t\t5. Financial report");
-            System.out.println("\t\t6. Exit");
-            System.out.print("\t\tSelect an option: ");
+            System.out.println("\n========== Welcome to the system ==========");
+            System.out.println("\tSelect the option you want to perform ");
+            System.out.println("1. Customers");
+            System.out.println("2. Computers");
+            System.out.println("3. Computer rental");
+            System.out.println("4. Computer reservation");
+            System.out.println("5. Financial report");
+            System.out.println("6. Exit");
+            System.out.print("Select an option: ");
 
             int option = scanner.nextInt();
 
