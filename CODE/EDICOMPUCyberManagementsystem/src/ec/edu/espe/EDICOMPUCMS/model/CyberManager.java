@@ -8,7 +8,7 @@ public class CyberManager {
 
     public CyberManager() {
         computers = new ArrayList<>();
-        // Inicializar algunas computadoras, por ejemplo, 10 computadoras
+        
         for (int i = 1; i <= 10; i++) {
             computers.add(new Computer(i));
         }
@@ -40,8 +40,12 @@ public class CyberManager {
         for (Computer computer : computers) {
             System.out.println("Computer " + computer.getId() + " is " +
                                (computer.isActive() ? "active" : "inactive"));
-            if (!computer.isActive()) {
-                System.out.println("Active duration: " + computer.getActiveDuration().toMinutes() + " minutes");
+            if(computer.isActive()){
+                System.out.println(" (Active duration : " + computer.getActiveDuration().toMinutes() + " minutes)");
+            } else if (computer.getActiveDuration().toMinutes() > 0) {
+                System.out.println(" (Last active duration: " + computer.getActiveDuration().toMinutes()+ "minutes )");
+            } else{
+                System.out.println();
             }
         }
     }
