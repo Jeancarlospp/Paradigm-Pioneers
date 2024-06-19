@@ -1,6 +1,7 @@
 
-package ec.edu.espe.EDICOMPUCMS.model;
+package ec.edu.espe.EDICOMPUCMS.view;
 
+import ec.edu.espe.EDICOMPUCMS.model.Users;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
