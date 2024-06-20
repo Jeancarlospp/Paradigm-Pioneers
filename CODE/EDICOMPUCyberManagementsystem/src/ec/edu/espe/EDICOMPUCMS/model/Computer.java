@@ -44,4 +44,9 @@ public class Computer {
             return Duration.between(startTime, endTime);
         }
     }
+<<<<<<< HEAD
 }
+=======
+    
+}
+>>>>>>> rama-Leidy
