@@ -1,24 +1,18 @@
-
 package ec.edu.espe.EDICOMPUCMS.model;
 
 public class Customer {
-    
     private String id;
     private String name;
-    private String lastName;
     private String address;
-    private String phone;
+    private int phone;
     private String email;
-    Computer assignedComputer;
 
-    public Customer(String id, String name, String lastName, String address, String phone, String email) {
+    public Customer(String id, String name, String address, int phone, String email) {
         this.id = id;
         this.name = name;
-        this.lastName = lastName;
         this.address = address;
         this.phone = phone;
         this.email = email;
-        this.assignedComputer = null;
     }
 
     public String getId() {
@@ -37,14 +31,6 @@ public class Customer {
         this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -53,11 +39,11 @@ public class Customer {
         this.address = address;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
@@ -69,17 +55,14 @@ public class Customer {
         this.email = email;
     }
 
-    public Computer getAssignedComputer() {
-        return assignedComputer;
-    }
-
-    public void setAssignedComputer(Computer assignedComputer) {
-        this.assignedComputer = assignedComputer;
-    }
-
     @Override
     public String toString() {
-        return "Customer{" + "id=" + id + ", name=" + name + ", lastName=" + lastName + ", address=" + address + ", phone=" + phone + ", email=" + email + ", assignedComputer=" + assignedComputer + '}';
+        return "Customer{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phone=" + phone +
+                ", email='" + email + '\'' +
+                '}';
     }
-
 }

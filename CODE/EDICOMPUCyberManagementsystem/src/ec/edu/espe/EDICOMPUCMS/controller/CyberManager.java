@@ -2,7 +2,6 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
-import ec.edu.espe.EDICOMPUCMS.utils.JsonUtil;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -17,7 +16,6 @@ public class CyberManager {
     public CyberManager() {
         computers = new ArrayList<>();
         
-        // Initialize computers (for testing purposes)
         for (int i = 1; i <= 10; i++) {
             computers.add(new Computer(i));
         }

@@ -26,7 +26,7 @@ public class Computer {
     public void start() {
         this.isActive = true;
         this.startTime = Instant.now();
-        this.endTime = null; // Reset endTime when starting
+        this.endTime = null;
     }
 
     public void stop() {
@@ -35,15 +35,17 @@ public class Computer {
     }
 
     public Duration getActiveDuration() {
-       if(startTime == null){
-           return Duration.ZERO;
-       }
-        
+        if (startTime == null) {
+            return Duration.ZERO;
+        }
+
         if (isActive) {
             return Duration.between(startTime, Instant.now());
         } else {
             return Duration.between(startTime, endTime);
         }
     }
-    
+public void setActive(boolean active) {
+        this.isActive = active;
+    }
 }
