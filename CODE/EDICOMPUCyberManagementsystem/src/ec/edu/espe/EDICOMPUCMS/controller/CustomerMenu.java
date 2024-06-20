@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CustomerMenu {
-    private final List<Customer> customers;
+    private List<Customer> customers;
     private final List<Computer> computers;
     private final GeneralReport generalReport;
     private final Scanner scanner = new Scanner(System.in);
@@ -18,6 +18,8 @@ public class CustomerMenu {
         this.customers = customers;
         this.computers = computers;
         this.generalReport = generalReport;
+        // Load customers from JSON at the beginning
+        this.customers = JsonUtil.readCustomersFromJson();
     }
 
     public void handleCustomers() {
@@ -46,6 +48,7 @@ public class CustomerMenu {
                     break;
                 case 4:
                     System.out.println("Exiting Customer Menu.");
+                    // Save customers to JSON when exiting
                     JsonUtil.saveCustomersToJson(customers);
                     return;
                 default:
@@ -88,6 +91,9 @@ public class CustomerMenu {
         Customer customer = new Customer(customerId, name, address, phone, email);
         customers.add(customer);
 
+        // Save customers to JSON after adding
+        JsonUtil.saveCustomersToJson(customers);
+
         System.out.println("Customer added successfully!");
     }
 
@@ -98,6 +104,8 @@ public class CustomerMenu {
         boolean removed = customers.removeIf(customer -> customer.getId().equals(customerId));
 
         if (removed) {
+            // Save customers to JSON after removing
+            JsonUtil.saveCustomersToJson(customers);
             System.out.println("Customer removed successfully!");
         } else {
             System.out.println("Customer not found with ID " + customerId);
@@ -105,12 +113,11 @@ public class CustomerMenu {
     }
 
     private void showCustomers() {
-        List<Customer> customersList = JsonUtil.readCustomersFromJson();
-        if (customersList == null || customersList.isEmpty()) {
+        if (customers.isEmpty()) {
             System.out.println("No customers registered yet.");
         } else {
             System.out.println("========== Customer List ==========");
-            for (Customer customer : customersList) {
+            for (Customer customer : customers) {
                 System.out.println(customer);
             }
         }

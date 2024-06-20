@@ -16,6 +16,23 @@ public class MainMenu {
     private static GeneralReport generalReport = new GeneralReport();
 
     public static void showMainMenu() {
+        // Cargar datos desde JSON
+        List<Customer> loadedCustomers = JsonUtil.readCustomersFromJson();
+        List<Computer> loadedComputers = JsonUtil.readComputersFromJson();
+        GeneralReport loadedGeneralReport = JsonUtil.readGeneralReportFromJson();
+
+        if (loadedCustomers != null) {
+            customers.addAll(loadedCustomers);
+        }
+
+        if (loadedComputers != null) {
+            computers.addAll(loadedComputers);
+        }
+
+        if (loadedGeneralReport != null) {
+            generalReport = loadedGeneralReport;
+        }
+
         while (true) {
             clearScreen();
             System.out.println("\n========== Welcome to the system ==========");
@@ -73,27 +90,5 @@ public class MainMenu {
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-    }
-
-    public static void main(String[] args) {
-        // Load existing data from JSON files if needed
-        List<Customer> loadedCustomers = JsonUtil.readCustomersFromJson();
-        List<Computer> loadedComputers = JsonUtil.readComputersFromJson();
-        GeneralReport loadedGeneralReport = JsonUtil.readGeneralReportFromJson();
-
-        if (loadedCustomers != null) {
-            customers.addAll(loadedCustomers);
-        }
-
-        if (loadedComputers != null) {
-            computers.addAll(loadedComputers);
-        }
-
-        if (loadedGeneralReport != null) {
-            generalReport = loadedGeneralReport;
-        }
-
-        // Show the main menu
-        showMainMenu();
     }
 }

@@ -14,12 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JsonUtil {
-    private static final String CUSTOMERS_FILE = "data/customers.json";
-    private static final String COMPUTERS_FILE = "data/computers.json";
-    private static final String GENERAL_REPORT_FILE = "data/generalReport.json";
+    private static final String CUSTOMERS_FILE = "customers.json";
+    private static final String COMPUTERS_FILE = "computers.json";
+    private static final String GENERAL_REPORT_FILE = "generalReport.json";
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    // Save customers to JSON file
     public static void saveCustomersToJson(List<Customer> customers) {
         try (Writer writer = new FileWriter(CUSTOMERS_FILE)) {
             GSON.toJson(customers, writer);
@@ -28,7 +27,6 @@ public class JsonUtil {
         }
     }
 
-    // Read customers from JSON file
     public static List<Customer> readCustomersFromJson() {
         List<Customer> customers = new ArrayList<>();
         try (Reader reader = new FileReader(CUSTOMERS_FILE)) {
@@ -39,14 +37,12 @@ public class JsonUtil {
                 }
             }
         } catch (FileNotFoundException e) {
-            // File not found, return an empty list
         } catch (IOException | JsonSyntaxException e) {
             e.printStackTrace();
         }
         return customers;
     }
 
-    // Save computers to JSON file
     public static void saveComputersToJson(List<Computer> computers) {
         try (Writer writer = new FileWriter(COMPUTERS_FILE)) {
             GSON.toJson(computers, writer);
@@ -55,7 +51,6 @@ public class JsonUtil {
         }
     }
 
-    // Read computers from JSON file
     public static List<Computer> readComputersFromJson() {
         List<Computer> computers = new ArrayList<>();
         try (Reader reader = new FileReader(COMPUTERS_FILE)) {
@@ -66,14 +61,12 @@ public class JsonUtil {
                 }
             }
         } catch (FileNotFoundException e) {
-            // File not found, return an empty list
         } catch (IOException | JsonSyntaxException e) {
             e.printStackTrace();
         }
         return computers;
     }
 
-    // Save general report to JSON file
     public static void saveGeneralReportToJson(GeneralReport generalReport) {
         try (Writer writer = new FileWriter(GENERAL_REPORT_FILE)) {
             GSON.toJson(generalReport, writer);
@@ -82,13 +75,11 @@ public class JsonUtil {
         }
     }
 
-    // Read general report from JSON file
     public static GeneralReport readGeneralReportFromJson() {
         GeneralReport generalReport = null;
         try (Reader reader = new FileReader(GENERAL_REPORT_FILE)) {
             generalReport = GSON.fromJson(reader, GeneralReport.class);
         } catch (FileNotFoundException e) {
-            // File not found, return null
         } catch (IOException | JsonSyntaxException e) {
             e.printStackTrace();
         }
