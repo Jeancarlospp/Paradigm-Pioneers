@@ -1,3 +1,4 @@
+
 package ec.edu.espe.EDICOMPUCMS.model;
 
 import java.time.Duration;
@@ -44,16 +45,7 @@ public class Computer {
             return Duration.between(startTime, endTime);
         }
     }
-<<<<<<< HEAD
 public void setActive(boolean active) {
         this.isActive = active;
     }
 }
-=======
-<<<<<<< HEAD
-}
-=======
-    
-}
->>>>>>> rama-Leidy
->>>>>>> 680da365c36fe09cfc504f88dfee0d333cc76c06
