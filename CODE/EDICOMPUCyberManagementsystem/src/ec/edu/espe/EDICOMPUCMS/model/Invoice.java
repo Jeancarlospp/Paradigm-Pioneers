@@ -4,7 +4,7 @@ package ec.edu.espe.EDICOMPUCMS.model;
 import java.util.Date;
 
 public class Invoice {
-     private int invoiceID;
+    private int invoiceID;
     private Customer customer;
     private Date date;
     private double amount;

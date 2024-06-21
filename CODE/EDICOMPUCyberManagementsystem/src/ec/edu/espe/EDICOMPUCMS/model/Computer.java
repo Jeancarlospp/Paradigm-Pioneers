@@ -1,3 +1,4 @@
+
 package ec.edu.espe.EDICOMPUCMS.model;
 
 import java.time.Duration;
@@ -18,6 +19,11 @@ public class Computer {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+
     public boolean isActive() {
         return isActive;
     }
@@ -25,7 +31,7 @@ public class Computer {
     public void start() {
         this.isActive = true;
         this.startTime = Instant.now();
-        this.endTime = null; // Reset endTime when starting
+        this.endTime = null;
     }
 
     public void stop() {
@@ -34,19 +40,23 @@ public class Computer {
     }
 
     public Duration getActiveDuration() {
-       if(startTime == null){
-           return Duration.ZERO;
-       }
-        
+        if (startTime == null) {
+            return Duration.ZERO;
+        }
+
         if (isActive) {
             return Duration.between(startTime, Instant.now());
         } else {
             return Duration.between(startTime, endTime);
         }
     }
-<<<<<<< HEAD
-}
-=======
+    public void setActive(boolean active) {
+        this.isActive = active;
+    }
+
+    @Override
+    public String toString() {
+        return "Computer{" + "id=" + id + ", isActive=" + isActive + ", startTime=" + startTime + ", endTime=" + endTime + '}';
+    }
     
 }
->>>>>>> rama-Leidy
