@@ -17,21 +17,7 @@ public class MainMenu {
 
     public static void showMainMenu() {
         // Cargar datos desde JSON
-        List<Customer> loadedCustomers = JsonUtil.readCustomersFromJson();
-        List<Computer> loadedComputers = JsonUtil.readComputersFromJson();
-        GeneralReport loadedGeneralReport = JsonUtil.readGeneralReportFromJson();
-
-        if (loadedCustomers != null) {
-            customers.addAll(loadedCustomers);
-        }
-
-        if (loadedComputers != null) {
-            computers.addAll(loadedComputers);
-        }
-
-        if (loadedGeneralReport != null) {
-            generalReport = loadedGeneralReport;
-        }
+        loadInitialData();
 
         while (true) {
             clearScreen();
@@ -45,7 +31,7 @@ public class MainMenu {
             System.out.println("6. Exit");
             System.out.print("Select an option: ");
 
-            int option = scanner.nextInt();
+            int option = getIntegerInput();
 
             clearScreen();
             switch (option) {
@@ -71,24 +57,65 @@ public class MainMenu {
                     break;
                 case 6:
                     System.out.println("Exiting the system.");
-                    JsonUtil.saveCustomersToJson(customers);
-                    JsonUtil.saveComputersToJson(computers);
-                    JsonUtil.saveGeneralReportToJson(generalReport);
+                    saveDataToJson();
                     return;
                 default:
                     System.out.println("Invalid option, please try again.");
             }
             System.out.println("\nPress Enter to continue...");
-            try {
-                System.in.read();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            waitForEnter();
         }
     }
 
-    public static void clearScreen() {
+    private static void loadInitialData() {
+        // Cargar datos desde JSON
+        List<Customer> loadedCustomers = JsonUtil.readCustomersFromJson();
+        List<Computer> loadedComputers = JsonUtil.readComputersFromJson();
+        GeneralReport loadedGeneralReport = JsonUtil.readGeneralReportFromJson();
+
+        if (loadedCustomers != null) {
+            customers.addAll(loadedCustomers);
+        }
+
+        if (loadedComputers != null) {
+            computers.addAll(loadedComputers);
+        }
+
+        if (loadedGeneralReport != null) {
+            generalReport = loadedGeneralReport;
+        }
+    }
+
+    private static void saveDataToJson() {
+        JsonUtil.saveCustomersToJson(customers);
+        JsonUtil.saveComputersToJson(computers);
+        JsonUtil.saveGeneralReportToJson(generalReport);
+    }
+
+    static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
+    }
+
+    private static int getIntegerInput() {
+        int option = 0;
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+                validInput = true;
+            } catch (NumberFormatException e) {
+                System.out.print("Invalid input. Please enter a number: ");
+            }
+        }
+        return option;
+    }
+
+    private static void waitForEnter() {
+        try {
+            System.in.read();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

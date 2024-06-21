@@ -1,5 +1,8 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
-
+/**
+ *
+ * @author Andrea Raura,Paradigm Pioneers Squad, DCCO-ESPE
+ */
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
 import ec.edu.espe.EDICOMPUCMS.model.Customer;
 import ec.edu.espe.EDICOMPUCMS.model.GeneralReport;
@@ -18,7 +21,6 @@ public class CustomerMenu {
         this.customers = customers;
         this.computers = computers;
         this.generalReport = generalReport;
-        // Load customers from JSON at the beginning
         this.customers = JsonUtil.readCustomersFromJson();
     }
 
