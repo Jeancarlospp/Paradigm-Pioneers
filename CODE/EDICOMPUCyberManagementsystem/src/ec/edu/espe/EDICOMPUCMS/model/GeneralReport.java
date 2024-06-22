@@ -1,9 +1,5 @@
 package ec.edu.espe.EDICOMPUCMS.model;
 
-/**
- *
- * @author Andrea Raura,Paradigm Pioneers Squad, DCCO-ESPE
- */
 
 import java.util.ArrayList;
 import java.util.List;

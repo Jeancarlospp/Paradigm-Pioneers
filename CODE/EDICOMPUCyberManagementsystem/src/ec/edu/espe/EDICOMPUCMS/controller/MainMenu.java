@@ -2,14 +2,13 @@
 
 package ec.edu.espe.EDICOMPUCMS.controller;
 
-import ec.edu.espe.EDICOMPUCMS.controller.ComputerMenu;
-import java.util.Scanner;
 
 
 import java.util.Scanner;
 
 public class MainMenu {
     public static void showMainMenu() {
+        ComputerBackupManager.backupComputerStatuses();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
