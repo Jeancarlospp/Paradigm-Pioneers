@@ -1,122 +1,58 @@
+
+
 package ec.edu.espe.EDICOMPUCMS.controller;
 
-import ec.edu.espe.EDICOMPUCMS.model.Computer;
 import ec.edu.espe.EDICOMPUCMS.model.Customer;
-import ec.edu.espe.EDICOMPUCMS.model.GeneralReport;
-import ec.edu.espe.EDICOMPUCMS.utils.JsonUtil;
-
-import java.util.List;
 import java.util.Scanner;
 
+
 public class CustomerMenu {
-    private final List<Customer> customers;
-    private final List<Computer> computers;
-    private final GeneralReport generalReport;
-    private final Scanner scanner = new Scanner(System.in);
+    public static void customerMenu(){
+        CustomerManager customerManager = new CustomerManager();
+        Scanner scanner = new Scanner(System.in);
+        String option;
 
-    public CustomerMenu(List<Customer> customers, List<Computer> computers, GeneralReport generalReport) {
-        this.customers = customers;
-        this.computers = computers;
-        this.generalReport = generalReport;
-    }
+        do {
 
-    public void handleCustomers() {
-        while (true) {
-            clearScreen();
-            System.out.println("\n========== Customer Menu ==========");
             System.out.println("1. Add Customer");
             System.out.println("2. Remove Customer");
             System.out.println("3. Show Customers");
             System.out.println("4. Exit");
-            System.out.print("Select an option: ");
+            System.out.print("Selec an option: ");
+            option = scanner.nextLine();
 
-            int option = scanner.nextInt();
-            scanner.nextLine(); 
-
-            clearScreen();
             switch (option) {
-                case 1:
-                    addCustomer();
+                case "1":
+                    System.out.print("ID: ");
+                    String id = scanner.nextLine();
+                    System.out.print("Name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Address: ");
+                    String address = scanner.nextLine();
+                    System.out.print("Phone: ");
+                    int phone = Integer.parseInt(scanner.nextLine());
+                    System.out.print("Email: ");
+                    String email = scanner.nextLine();
+                    Customer customer = new Customer(id, name, address, phone, email);
+                    customerManager.addCustomer(customer);
                     break;
-                case 2:
-                    removeCustomer();
+                case "2":
+                    System.out.print("Client ID to be removed ");
+                    String removeId = scanner.nextLine();
+                    customerManager.removeCustomer(removeId);
                     break;
-                case 3:
-                    showCustomers();
+                case "3":
+                    customerManager.showCustomers();
                     break;
-                case 4:
-                    System.out.println("Exiting Customer Menu.");
-                    JsonUtil.saveCustomersToJson(customers);
-                    return;
+                case "4":
+                    System.out.println("Exit...");
+                    break;
                 default:
-                    System.out.println("Invalid option, please try again.");
+                    System.out.println("Invalid Option");
+                    break;
             }
-            System.out.println("\nPress Enter to continue...");
-            try {
-                System.in.read();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    private void addCustomer() {
-        System.out.print("Enter customer ID: ");
-        String customerId = scanner.nextLine();
-
-        System.out.print("Enter customer name: ");
-        String name = scanner.nextLine();
-
-        System.out.print("Enter customer address: ");
-        String address = scanner.nextLine();
-
-        int phone = 0;
-        boolean validPhone = false;
-        while (!validPhone) {
-            try {
-                System.out.print("Enter customer phone number: ");
-                phone = Integer.parseInt(scanner.nextLine());
-                validPhone = true;
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid phone number format. Please enter a valid number.");
-            }
-        }
-
-        System.out.print("Enter customer email: ");
-        String email = scanner.nextLine();
-
-        Customer customer = new Customer(customerId, name, address, phone, email);
-        customers.add(customer);
-
-        System.out.println("Customer added successfully!");
-    }
-
-    private void removeCustomer() {
-        System.out.print("Enter customer ID to remove: ");
-        String customerId = scanner.nextLine();
-
-        boolean removed = customers.removeIf(customer -> customer.getId().equals(customerId));
-
-        if (removed) {
-            System.out.println("Customer removed successfully!");
-        } else {
-            System.out.println("Customer not found with ID " + customerId);
-        }
+        } while (!option.equals("4"));
     }
     
-    private void showCustomers() {
-        if (customers.isEmpty()) {
-            System.out.println("No customers registered yet.");
-        } else {
-            System.out.println("========== Customer List ==========");
-            for (Customer customer : customers) {
-                System.out.println(customer);
-            }
-        }
-    }
-    
-    private void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-}
+
+            

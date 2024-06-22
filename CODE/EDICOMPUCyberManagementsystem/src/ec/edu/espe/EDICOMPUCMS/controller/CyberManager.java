@@ -2,14 +2,10 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
-
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-/**
- *
- * @author Leidy Saraguro,Paradigm Pioneers Squad, DCCO-ESPE
- */
+
 public class CyberManager {
     private List<Computer> computers;
 
@@ -63,3 +59,5 @@ public class CyberManager {
         }
     }
 }
+
+
