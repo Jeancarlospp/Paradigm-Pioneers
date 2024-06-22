@@ -1,5 +1,6 @@
-package ec.edu.espe.EDICOMPUCMS.model;
+package ec.edu.espe.EDICOMPUCMS.controller;
 
+import ec.edu.espe.EDICOMPUCMS.model.Computer;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;

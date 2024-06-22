@@ -1,8 +1,7 @@
 
 package ec.edu.espe.EDICOMPUCMS.view;
 
-import ec.edu.espe.EDICOMPUCMS.model.Login;
-import static ec.edu.espe.EDICOMPUCMS.model.MainMenu.showMainMenu;
+import static ec.edu.espe.EDICOMPUCMS.controller.MainMenu.showMainMenu;
 import ec.edu.espe.EDICOMPUCMS.model.Users;
 
 public class EDICOMPUCyberManagementSystem {

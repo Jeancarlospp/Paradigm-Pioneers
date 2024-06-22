@@ -1,5 +1,5 @@
 
-package ec.edu.espe.EDICOMPUCMS.model;
+package ec.edu.espe.EDICOMPUCMS.controller;
 
 
 import java.util.Scanner;

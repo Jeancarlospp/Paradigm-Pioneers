@@ -1,6 +1,7 @@
 
-package ec.edu.espe.EDICOMPUCMS.model;
+package ec.edu.espe.EDICOMPUCMS.controller;
 
+import ec.edu.espe.EDICOMPUCMS.controller.ComputerMenu;
 import java.util.Scanner;
 
 
@@ -26,7 +27,7 @@ public class MainMenu {
             clearScreen();
             switch (option) {
                 case 1:
-                    System.out.println("Customers");
+                    CustomerMenu.customerMenu();
                     // Call method or class for Customers
                     break;
                 case 2:
