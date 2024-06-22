@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package ec.edu.espe.EDICOMPUCMS.controller;
 /**
  *
@@ -28,12 +29,32 @@ public class CustomerMenu {
         while (true) {
             clearScreen();
             System.out.println("\n========== Customer Menu ==========");
+=======
+
+
+package ec.edu.espe.EDICOMPUCMS.controller;
+
+import ec.edu.espe.EDICOMPUCMS.model.Customer;
+import java.util.Scanner;
+
+
+public class CustomerMenu {
+    public static void customerMenu(){
+        CustomerManager customerManager = new CustomerManager();
+        Scanner scanner = new Scanner(System.in);
+        String option;
+
+        do {
+
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
             System.out.println("1. Add Customer");
             System.out.println("2. Remove Customer");
             System.out.println("3. Show Customers");
             System.out.println("4. Exit");
-            System.out.print("Select an option: ");
+            System.out.print("Selec an option: ");
+            option = scanner.nextLine();
 
+<<<<<<< HEAD
             int option = scanner.nextInt();
             scanner.nextLine(); // Consume newline character left by nextInt()
 
@@ -44,10 +65,35 @@ public class CustomerMenu {
                     break;
                 case 2:
                     removeCustomer();
+=======
+            switch (option) {
+                case "1":
+                    System.out.print("ID: ");
+                    String id = scanner.nextLine();
+                    System.out.print("Name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Address: ");
+                    String address = scanner.nextLine();
+                    System.out.print("Phone: ");
+                    int phone = Integer.parseInt(scanner.nextLine());
+                    System.out.print("Email: ");
+                    String email = scanner.nextLine();
+                    Customer customer = new Customer(id, name, address, phone, email);
+                    customerManager.addCustomer(customer);
                     break;
-                case 3:
-                    showCustomers();
+                case "2":
+                    System.out.print("Client ID to be removed ");
+                    String removeId = scanner.nextLine();
+                    customerManager.removeCustomer(removeId);
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
                     break;
+                case "3":
+                    customerManager.showCustomers();
+                    break;
+                case "4":
+                    System.out.println("Exit...");
+                    break;
+<<<<<<< HEAD
                 case 4:
                     System.out.println("Exiting Customer Menu.");
                     // Save customers to JSON when exiting
@@ -61,10 +107,17 @@ public class CustomerMenu {
                 System.in.read();
             } catch (Exception e) {
                 e.printStackTrace();
+=======
+                default:
+                    System.out.println("Invalid Option");
+                    break;
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
             }
-        }
+        } while (!option.equals("4"));
     }
+}
 
+<<<<<<< HEAD
     private void addCustomer() {
         System.out.print("Enter customer ID: ");
         String customerId = scanner.nextLine();
@@ -130,3 +183,6 @@ public class CustomerMenu {
         System.out.flush();
     }
 }
+=======
+            
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558

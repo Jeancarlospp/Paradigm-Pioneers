@@ -83,4 +83,8 @@ public class GeneralReport {
 
         return sb.toString();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558

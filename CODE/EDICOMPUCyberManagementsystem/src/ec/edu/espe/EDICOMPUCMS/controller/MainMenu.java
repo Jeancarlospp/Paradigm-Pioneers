@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
@@ -7,6 +8,16 @@ import ec.edu.espe.EDICOMPUCMS.utils.JsonUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+=======
+
+
+package ec.edu.espe.EDICOMPUCMS.controller;
+
+import ec.edu.espe.EDICOMPUCMS.controller.ComputerMenu;
+import java.util.Scanner;
+
+
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
 import java.util.Scanner;
 
 public class MainMenu {
@@ -16,8 +27,12 @@ public class MainMenu {
     private static GeneralReport generalReport = new GeneralReport();
 
     public static void showMainMenu() {
+<<<<<<< HEAD
         // Cargar datos desde JSON
         loadInitialData();
+=======
+        Scanner scanner = new Scanner(System.in);
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
 
         while (true) {
             clearScreen();
@@ -27,7 +42,12 @@ public class MainMenu {
             System.out.println("2. Computers");
             System.out.println("3. Computer rental");
             System.out.println("4. Computer reservation");
+<<<<<<< HEAD
             System.out.println("5. General report");
+=======
+            System.out.println("5. Financial report");
+
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
             System.out.println("6. Exit");
             System.out.print("Select an option: ");
 
@@ -36,8 +56,13 @@ public class MainMenu {
             clearScreen();
             switch (option) {
                 case 1:
+<<<<<<< HEAD
                     CustomerMenu customerMenu = new CustomerMenu(customers, computers, generalReport);
                     customerMenu.handleCustomers();
+=======
+                    CustomerMenu.customerMenu();
+                    // Call method or class for Customers
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
                     break;
                 case 2:
                     ComputerMenu computerMenu = new ComputerMenu(computers, generalReport);
@@ -57,7 +82,11 @@ public class MainMenu {
                     break;
                 case 6:
                     System.out.println("Exiting the system.");
+<<<<<<< HEAD
                     saveDataToJson();
+=======
+
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
                     return;
                 default:
                     System.out.println("Invalid option, please try again.");
@@ -96,6 +125,7 @@ public class MainMenu {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
+<<<<<<< HEAD
 
     private static int getIntegerInput() {
         int option = 0;
@@ -119,3 +149,7 @@ public class MainMenu {
         }
     }
 }
+=======
+}
+
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558

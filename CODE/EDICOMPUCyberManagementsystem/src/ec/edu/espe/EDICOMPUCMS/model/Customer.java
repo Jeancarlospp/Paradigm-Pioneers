@@ -10,6 +10,11 @@ public class Customer {
     private int phone;
     private String email;
 
+<<<<<<< HEAD
+=======
+    // Constructor
+
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
     public Customer(String id, String name, String address, int phone, String email) {
         this.id = id;
         this.name = name;
@@ -17,6 +22,8 @@ public class Customer {
         this.phone = phone;
         this.email = email;
     }
+
+    // Getters and Setters
 
     public String getId() {
         return id;

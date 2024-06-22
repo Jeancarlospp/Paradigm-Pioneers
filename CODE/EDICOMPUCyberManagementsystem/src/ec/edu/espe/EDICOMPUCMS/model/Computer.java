@@ -19,6 +19,11 @@ public class Computer {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+
     public boolean isActive() {
         return isActive;
     }
@@ -45,7 +50,19 @@ public class Computer {
             return Duration.between(startTime, endTime);
         }
     }
+<<<<<<< HEAD
 public void setActive(boolean active) {
         this.isActive = active;
     }
+=======
+    public void setActive(boolean active) {
+        this.isActive = active;
+    }
+
+    @Override
+    public String toString() {
+        return "Computer{" + "id=" + id + ", isActive=" + isActive + ", startTime=" + startTime + ", endTime=" + endTime + '}';
+    }
+    
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
 }

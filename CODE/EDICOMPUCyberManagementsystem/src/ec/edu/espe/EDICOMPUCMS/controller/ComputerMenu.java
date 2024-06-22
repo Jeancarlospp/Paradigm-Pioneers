@@ -1,9 +1,13 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
 
+<<<<<<< HEAD
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
 import ec.edu.espe.EDICOMPUCMS.model.GeneralReport;
 import ec.edu.espe.EDICOMPUCMS.utils.JsonUtil;
 import java.util.List;
+=======
+
+>>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
 import java.util.Scanner;
 
 public class ComputerMenu {
