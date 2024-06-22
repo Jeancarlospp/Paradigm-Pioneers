@@ -1,4 +1,5 @@
 
+
 package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.model.Customer;
@@ -12,6 +13,7 @@ public class CustomerMenu {
         String option;
 
         do {
+
             System.out.println("1. Add Customer");
             System.out.println("2. Remove Customer");
             System.out.println("3. Show Customers");
@@ -52,4 +54,5 @@ public class CustomerMenu {
         } while (!option.equals("4"));
     }
     
-}
+
+            

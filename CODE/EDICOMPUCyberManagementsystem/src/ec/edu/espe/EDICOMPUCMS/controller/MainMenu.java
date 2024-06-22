@@ -1,4 +1,5 @@
 
+
 package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.controller.ComputerMenu;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 public class MainMenu {
     public static void showMainMenu() {
         Scanner scanner = new Scanner(System.in);
+
         while (true) {
             clearScreen();
             System.out.println("\n========== Welcome to the system ==========");
@@ -19,6 +21,7 @@ public class MainMenu {
             System.out.println("3. Computer rental");
             System.out.println("4. Computer reservation");
             System.out.println("5. Financial report");
+
             System.out.println("6. Exit");
             System.out.print("Select an option: ");
 
@@ -47,6 +50,7 @@ public class MainMenu {
                     break;
                 case 6:
                     System.out.println("Exiting the system.");
+
                     return;
                 default:
                     System.out.println("Invalid option, please try again.");
@@ -61,3 +65,4 @@ public class MainMenu {
         System.out.flush();
     }
 }
+

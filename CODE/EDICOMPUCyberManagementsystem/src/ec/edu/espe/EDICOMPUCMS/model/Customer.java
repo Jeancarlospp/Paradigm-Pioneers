@@ -8,6 +8,7 @@ public class Customer {
     private String email;
 
     // Constructor
+
     public Customer(String id, String name, String address, int phone, String email) {
         this.id = id;
         this.name = name;
@@ -17,6 +18,7 @@ public class Customer {
     }
 
     // Getters and Setters
+
     public String getId() {
         return id;
     }
