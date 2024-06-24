@@ -1,6 +1,7 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
+import ec.edu.espe.EDICOMPUCMS.model.History;
 import ec.edu.espe.EDICOMPUCMS.model.Tariff;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -9,10 +10,12 @@ import java.util.List;
 public class CyberManager {
     private List<Computer> computers;
     private Tariff tariff;
+    private List<History> history;
 
     public CyberManager() {
         tariff = new Tariff(1.00, 0.15);  // 1 dólar por hora, tarifa mínima 15 centavos
         computers = new ArrayList<>();
+        history = new ArrayList<>();
         
         for (int i = 1; i <= 10; i++) {
             computers.add(new Computer(i, tariff));
@@ -35,6 +38,11 @@ public class CyberManager {
             if (computer.getId() == id && computer.isActive()) {
                 computer.stop();
                 System.out.println("Computer " + id + " has been stopped.");
+                
+                // Registrar el historial de uso
+                double cost = computer.calculateCost();
+                History entry = new History(computer.getId(), computer.getStartTime(), computer.getEndTime(), cost);
+                history.add(entry);
                 return;
             }
         }
@@ -61,5 +69,11 @@ public class CyberManager {
             }
         }
     }
+    
+    public void showHistory() {
+        System.out.println("\n========== Financial Report ==========");
+        for (History entry : history) {
+            System.out.println(entry);
+        }
+    }
 }
-
