@@ -1,4 +1,3 @@
-
 package ec.edu.espe.EDICOMPUCMS.model;
 
 import java.time.Duration;
