@@ -71,7 +71,7 @@ public class CyberManager {
     }
     
     public void showHistory() {
-        System.out.println("\n========== Usage History ==========");
+        System.out.println("\n========== Financial Report ==========");
         for (History entry : history) {
             System.out.println(entry);
         }

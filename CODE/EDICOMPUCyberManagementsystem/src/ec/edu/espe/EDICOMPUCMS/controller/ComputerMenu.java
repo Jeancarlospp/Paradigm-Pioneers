@@ -13,7 +13,7 @@ public class ComputerMenu {
             System.out.println("1.  Start a computer");
             System.out.println("2.  Stop a computer");
             System.out.println("3.  Show computer status");
-            System.out.println("4.  Show usage history");
+            System.out.println("4.  Financial Report");
             System.out.println("5.  Exit");
             System.out.print("Select an option: ");
 

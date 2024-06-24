@@ -1,5 +1,6 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MainMenu {
@@ -12,10 +13,9 @@ public class MainMenu {
             System.out.println("\n========== Welcome to the system ==========");
             System.out.println("\tSelect the option you want to perform ");
             System.out.println("1. Customers");
-            System.out.println("2. Computer rental");
+            System.out.println("2. Cyber Management");
             System.out.println("3. Computer reservation");
-            System.out.println("4. Financial report");
-            System.out.println("5. Exit ");
+            System.out.println("4. Exit ");
 
             System.out.print("Select an option: ");
 
@@ -35,18 +35,14 @@ public class MainMenu {
                      // Call method or class for Computer reservation
                     break;
                 case 4:
-                    System.out.println("Financial report");
-                    // Call method or class for Financial report
-                    break;
-                case 5:
                     System.out.println("Exiting the system.");
-                    
+             
                     return;
                 default:
                     System.out.println("Invalid option, please try again.");
             }
             System.out.println("\nPress Enter to continue...");
-            try { System.in.read(); } catch (Exception e) {}
+            try { System.in.read(); } catch (IOException e) {}
         }
     }
 
