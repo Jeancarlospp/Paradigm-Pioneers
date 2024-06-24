@@ -1,19 +1,21 @@
-
 package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
+import ec.edu.espe.EDICOMPUCMS.model.Tariff;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CyberManager {
     private List<Computer> computers;
+    private Tariff tariff;
 
     public CyberManager() {
+        tariff = new Tariff(1.00, 0.15);  // 1 dólar por hora, tarifa mínima 15 centavos
         computers = new ArrayList<>();
         
         for (int i = 1; i <= 10; i++) {
-            computers.add(new Computer(i));
+            computers.add(new Computer(i, tariff));
         }
     }
 
@@ -52,12 +54,11 @@ public class CyberManager {
                 Duration duration = computer.getActiveDuration();
                 long hours = duration.toHours();
                 long minutes = duration.toMinutes() % 60;
-                System.out.printf(" (Last active duration: %d hours %d minutes)%n", hours, minutes);
+                double cost = computer.calculateCost();
+                System.out.printf(" (Last active duration: %d hours %d minutes, Cost: $%.2f)%n", hours, minutes, cost);
             } else {
                 System.out.println();
             }
         }
     }
 }
-
-

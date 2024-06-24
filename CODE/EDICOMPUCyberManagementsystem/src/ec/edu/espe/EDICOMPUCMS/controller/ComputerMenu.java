@@ -1,6 +1,4 @@
-
 package ec.edu.espe.EDICOMPUCMS.controller;
-
 
 import java.util.Scanner;
 
@@ -39,8 +37,7 @@ public class ComputerMenu {
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
-                 }
-              }
-        
+            }
         }
     }
+}
