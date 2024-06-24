@@ -1,7 +1,5 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
 
-
-
 import java.util.Scanner;
 
 public class MainMenu {

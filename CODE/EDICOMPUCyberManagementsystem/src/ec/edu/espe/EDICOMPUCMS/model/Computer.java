@@ -54,6 +54,14 @@ public class Computer {
     public void setActive(boolean active) {
         this.isActive = active;
     }
+    
+    public Instant getStartTime() {
+        return startTime;
+    }
+
+    public Instant getEndTime() {
+        return endTime;
+    }
 
     @Override
     public String toString() {
