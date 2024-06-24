@@ -7,23 +7,19 @@ public class Customer {
     private String id;
     private String name;
     private String address;
-    private int phone;
+    private String phone;
     private String email;
 
-<<<<<<< HEAD
-=======
-    // Constructor
 
->>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
-    public Customer(String id, String name, String address, int phone, String email) {
+
+    public Customer(String id, String name, String address, String phone, String email) {
+
         this.id = id;
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.email = email;
     }
-
-    // Getters and Setters
 
     public String getId() {
         return id;
@@ -49,11 +45,11 @@ public class Customer {
         this.address = address;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -71,7 +67,7 @@ public class Customer {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", phone=" + phone +
+                ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }

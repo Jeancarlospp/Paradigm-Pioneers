@@ -1,13 +1,23 @@
-<<<<<<< HEAD
 [
   {
-    "id": "L0042",
-    "name": "Leidy",
-    "address": "Guajalo",
-    "phone": 9987878,
-    "email": "leidy@"
+    "id": "1758693325",
+    "name": "Kerly Ochoa",
+    "address": "Cotocollao",
+    "phone": "0991586478",
+    "email": "Kerly@espe.edu.ec"
+  },
+  {
+    "id": "1745698874",
+    "name": "Manuel Arroyo",
+    "address": "Av.6 de Diciembre",
+    "phone": "0998745365",
+    "email": "Arroy.55@gmail.com"
+  },
+  {
+    "id": "1754459160",
+    "name": "Andrea",
+    "address": "Alangasi",
+    "phone": "0998376754",
+    "email": "raura@gmail.com"
   }
 ]
-=======
-[{"id":"1750131979","name":"Pedro","address":"Mariana de Jesus","phone":993045687,"email":"PEdro@gmail.com"},{"id":"1750131978","name":"Gonzalo Perez","address":"Mena del Hierro","phone":993081187,"email":"Pedro@espe.edu.ec"}]
->>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558

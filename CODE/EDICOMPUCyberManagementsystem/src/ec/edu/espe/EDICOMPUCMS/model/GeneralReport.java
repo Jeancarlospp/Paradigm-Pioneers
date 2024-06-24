@@ -1,9 +1,5 @@
 package ec.edu.espe.EDICOMPUCMS.model;
 
-/**
- *
- * @author Andrea Raura,Paradigm Pioneers Squad, DCCO-ESPE
- */
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,8 +79,4 @@ public class GeneralReport {
 
         return sb.toString();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558

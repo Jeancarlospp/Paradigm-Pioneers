@@ -1,8 +1,7 @@
-
 package ec.edu.espe.EDICOMPUCMS.controller;
 
-
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import ec.edu.espe.EDICOMPUCMS.model.Customer;
 
@@ -57,10 +56,10 @@ public class CustomerManager {
 
     private void saveCustomers() {
         try (FileWriter writer = new FileWriter(FILE_NAME)) {
-            Gson gson = new Gson();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(customers, writer);
         } catch (IOException e) {
-            System.out.println("Error saving customer file:  " + e.getMessage());
+            System.out.println("Error saving customer file: " + e.getMessage());
         }
     }
 

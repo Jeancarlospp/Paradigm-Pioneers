@@ -1,4 +1,3 @@
-
 package ec.edu.espe.EDICOMPUCMS.model;
 
 import java.time.Duration;
@@ -50,11 +49,6 @@ public class Computer {
             return Duration.between(startTime, endTime);
         }
     }
-<<<<<<< HEAD
-public void setActive(boolean active) {
-        this.isActive = active;
-    }
-=======
     public void setActive(boolean active) {
         this.isActive = active;
     }
@@ -64,5 +58,4 @@ public void setActive(boolean active) {
         return "Computer{" + "id=" + id + ", isActive=" + isActive + ", startTime=" + startTime + ", endTime=" + endTime + '}';
     }
     
->>>>>>> c5beda7e217edd8fffcf33a829bc5d067edfd558
 }
