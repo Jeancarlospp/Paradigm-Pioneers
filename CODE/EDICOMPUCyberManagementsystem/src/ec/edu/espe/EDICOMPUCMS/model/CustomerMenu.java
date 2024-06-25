@@ -1,9 +1,10 @@
-package ec.edu.espe.EDICOMPUCMS.controller;
+package ec.edu.espe.EDICOMPUCMS.model;
 /**
  *
  * @author Andrea Raura,Paradigm Pioneers Squad, DCCO-ESPE
  */
 
+import ec.edu.espe.EDICOMPUCMS.controller.CustomerManager;
 import ec.edu.espe.EDICOMPUCMS.model.Customer;
 import java.util.Scanner;
 

@@ -2,6 +2,7 @@
 package ec.edu.espe.EDICOMPUCMS.model;
 
 import ec.edu.espe.EDICOMPUCMS.controller.CyberManager;
+import ec.edu.espe.EDICOMPUCMS.controller.CyberManager;
 import java.util.Scanner;
 
 

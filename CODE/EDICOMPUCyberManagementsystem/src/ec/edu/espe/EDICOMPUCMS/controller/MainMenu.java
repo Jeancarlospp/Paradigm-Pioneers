@@ -1,5 +1,7 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
 
+import ec.edu.espe.EDICOMPUCMS.model.ComputerMenu;
+import ec.edu.espe.EDICOMPUCMS.model.CustomerMenu;
 import java.io.IOException;
 import java.util.Scanner;
 
