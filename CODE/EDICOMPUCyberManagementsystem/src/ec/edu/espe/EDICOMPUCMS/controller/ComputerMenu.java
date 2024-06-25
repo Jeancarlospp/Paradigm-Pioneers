@@ -20,12 +20,12 @@ public class ComputerMenu {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.print("Enter computer ID to start: ");
+                    System.out.print("[Select between computer 1 to 10]\nEnter computer ID to start: ");
                     int startId = scanner.nextInt();
                     cyberManager.startComputer(startId);
                     break;
                 case 2:
-                    System.out.print("Enter computer ID to stop:  ");
+                    System.out.print("[Select between computer 1 to 10]\nEnter computer ID to stop:  ");
                     int stopId = scanner.nextInt();
                     cyberManager.stopComputer(stopId);
                     break;
