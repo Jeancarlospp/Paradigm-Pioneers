@@ -1,5 +1,8 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
-
+/**
+ *
+ * @author Leidy Saraguro,Paradigm Pioneers Squad, DCCO-ESPE
+ */
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;

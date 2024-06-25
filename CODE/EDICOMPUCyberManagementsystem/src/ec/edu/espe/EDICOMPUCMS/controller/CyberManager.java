@@ -1,5 +1,8 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
-
+/**
+ *
+ * @author Sjean
+ */
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
 import ec.edu.espe.EDICOMPUCMS.model.History;
 import ec.edu.espe.EDICOMPUCMS.model.Tariff;

@@ -1,5 +1,8 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
-
+/**
+ *
+ * @author Leidy Saraguro,Paradigm Pioneers Squad, DCCO-ESPE
+ */
 import ec.edu.espe.EDICOMPUCMS.model.ComputerMenu;
 import ec.edu.espe.EDICOMPUCMS.model.CustomerMenu;
 import ec.edu.espe.EDICOMPUCMS.model.RentalMenu;

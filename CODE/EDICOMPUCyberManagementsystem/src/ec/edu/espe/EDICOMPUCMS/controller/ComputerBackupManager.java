@@ -1,5 +1,8 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
-
+/**
+ *
+ * @author Sjean
+ */
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

@@ -1,6 +1,9 @@
 
 package ec.edu.espe.EDICOMPUCMS.model;
-
+/**
+ *
+ * @author Leidy Saraguro,Paradigm Pioneers Squad, DCCO-ESPE
+ */
 import ec.edu.espe.EDICOMPUCMS.controller.CyberManager;
 import ec.edu.espe.EDICOMPUCMS.controller.CyberManager;
 import java.util.Scanner;

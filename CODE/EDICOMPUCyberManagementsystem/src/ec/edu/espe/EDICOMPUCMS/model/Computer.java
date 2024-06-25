@@ -1,5 +1,8 @@
 package ec.edu.espe.EDICOMPUCMS.model;
-
+/**
+ *
+ * @author Sjean
+ */
 import java.time.Duration;
 import java.time.Instant;
 
