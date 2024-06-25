@@ -1,6 +1,5 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
 
-
 import java.util.Scanner;
 
 public class ComputerMenu {
@@ -14,7 +13,8 @@ public class ComputerMenu {
             System.out.println("1.  Start a computer");
             System.out.println("2.  Stop a computer");
             System.out.println("3.  Show computer status");
-            System.out.println("4.  Exit");
+            System.out.println("4.  Financial Report");
+            System.out.println("5.  Exit");
             System.out.print("Select an option: ");
 
             int choice = scanner.nextInt();
@@ -34,12 +34,14 @@ public class ComputerMenu {
                     cyberManager.showComputerStatus();
                     break;
                 case 4:
+                    cyberManager.showHistory();
+                    break;
+                case 5:
                     System.out.println("Exiting...");
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
-                 }
-              }
-        
+            }
         }
     }
+}
