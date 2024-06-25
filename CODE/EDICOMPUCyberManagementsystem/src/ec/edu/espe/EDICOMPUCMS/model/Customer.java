@@ -1,5 +1,8 @@
 package ec.edu.espe.EDICOMPUCMS.model;
-
+/**
+ *
+ * @author Andrea Raura,Paradigm Pioneers Squad, DCCO-ESPE
+ */
 public class Customer {
     private String id;
     private String name;
@@ -7,8 +10,10 @@ public class Customer {
     private String phone;
     private String email;
 
-    // Constructor, getters y setters
+
+
     public Customer(String id, String name, String address, String phone, String email) {
+
         this.id = id;
         this.name = name;
         this.address = address;
@@ -58,12 +63,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Customer{" + "id='" + id + '\'' +", name='" + name + '\'' +", address='" + address + '\'' +", phone='" + phone + '\'' +       ", email='" + email + '\'' +'}';
     }
 }

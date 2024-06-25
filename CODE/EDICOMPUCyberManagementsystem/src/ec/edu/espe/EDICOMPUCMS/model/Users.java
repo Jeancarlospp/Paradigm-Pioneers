@@ -1,6 +1,8 @@
-
 package ec.edu.espe.EDICOMPUCMS.model;
-
+/**
+ *
+ * @author Sjean
+ */
 
 public class Users {
     String username;

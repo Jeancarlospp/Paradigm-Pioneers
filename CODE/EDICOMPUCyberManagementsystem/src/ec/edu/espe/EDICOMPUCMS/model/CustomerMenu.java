@@ -1,5 +1,10 @@
-package ec.edu.espe.EDICOMPUCMS.controller;
+package ec.edu.espe.EDICOMPUCMS.model;
+/**
+ *
+ * @author Andrea Raura,Paradigm Pioneers Squad, DCCO-ESPE
+ */
 
+import ec.edu.espe.EDICOMPUCMS.controller.CustomerManager;
 import ec.edu.espe.EDICOMPUCMS.model.Customer;
 import java.util.Scanner;
 
@@ -70,6 +75,7 @@ public class CustomerMenu {
             }
         } while (!option.equals("4"));
     }
+
 
     private static boolean isValidId(String id) {
         return id.matches("\\d{10}");

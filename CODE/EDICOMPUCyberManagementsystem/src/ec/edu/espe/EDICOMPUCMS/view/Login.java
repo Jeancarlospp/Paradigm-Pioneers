@@ -1,6 +1,8 @@
-
 package ec.edu.espe.EDICOMPUCMS.view;
-
+/**
+ *
+ * @author Sjean
+ */
 import ec.edu.espe.EDICOMPUCMS.model.Users;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
