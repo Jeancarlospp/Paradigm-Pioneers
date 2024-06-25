@@ -2,6 +2,7 @@ package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.model.ComputerMenu;
 import ec.edu.espe.EDICOMPUCMS.model.CustomerMenu;
+import ec.edu.espe.EDICOMPUCMS.model.RentalMenu;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class MainMenu {
             System.out.println("\tSelect the option you want to perform ");
             System.out.println("1. Customers");
             System.out.println("2. Cyber Management");
-            System.out.println("3. Computer reservation");
+            System.out.println("3. Computer rental");
             System.out.println("4. Exit ");
 
             System.out.print("Select an option: ");
@@ -27,14 +28,13 @@ public class MainMenu {
             switch (option) {
                 case 1:
                     CustomerMenu.customerMenu();
-                    // Call method or class for Customers
                     break;
                 case 2:
                     ComputerMenu.handleComputers();
                     break;
                 case 3:
-                    System.out.println("Computer reservation");
-                     // Call method or class for Computer reservation
+                    System.out.println("Computer rental");
+                     RentalMenu.showRentalMenu();
                     break;
                 case 4:
                     System.out.println("Exiting the system.");
