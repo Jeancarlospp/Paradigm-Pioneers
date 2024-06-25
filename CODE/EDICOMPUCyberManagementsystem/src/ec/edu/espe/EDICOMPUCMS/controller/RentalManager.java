@@ -1,5 +1,8 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
-
+/**
+ *
+ * @author Andrea Raura,Paradigm Pioneers Squad, DCCO-ESPE
+ */
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
 import ec.edu.espe.EDICOMPUCMS.model.Customer;
 import ec.edu.espe.EDICOMPUCMS.model.Rental;

@@ -1,5 +1,8 @@
 package ec.edu.espe.EDICOMPUCMS.model;
-
+/**
+ *
+ * @author Andrea Raura,Paradigm Pioneers Squad, DCCO-ESPE
+ */
 public class Rental {
     private int rentalID;
     private Customer customer;
