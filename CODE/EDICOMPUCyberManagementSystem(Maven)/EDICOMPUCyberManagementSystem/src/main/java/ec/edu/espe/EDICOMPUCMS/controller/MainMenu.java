@@ -1,6 +1,7 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.view.CustomerManagementPanel;
+import ec.edu.espe.EDICOMPUCMS.view.CyberManagementPanel;
 import ec.edu.espe.EDICOMPUCMS.view.LoginScreen;
 import javax.swing.*;
 import java.awt.*;
@@ -158,11 +159,7 @@ public class MainMenu extends JFrame {
     }
 
     private JPanel createCyberManagementPanel() {
-        // Update this method to create a more detailed cyber management panel
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.add(new JLabel("Cyber Management", SwingConstants.CENTER), BorderLayout.NORTH);
-        // Add more components for cyber management
-        return panel;
+        return new CyberManagementPanel();
     }
 
     private JPanel createComputerRentalPanel() {
