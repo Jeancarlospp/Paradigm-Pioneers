@@ -4,7 +4,7 @@ import ec.edu.espe.EDICOMPUCMS.controller.CyberManager;
 import java.util.Scanner;
 
 public class ComputerMenu {
-    private static CyberManager cyberManager = new CyberManager();
+    /*private static CyberManager cyberManager = new CyberManager();
 
     public static void handleComputers() {
         Scanner scanner = new Scanner(System.in);
@@ -41,8 +41,10 @@ public class ComputerMenu {
                     System.out.println("Exiting...");
                     return;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println("Invalid choice. Please try again."); 
             }
         }
+
     }
+*/
 }

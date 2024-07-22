@@ -23,7 +23,7 @@ public class FinancialReportMenu {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-                    cyberManager.showHistory();
+                    //cyberManager.showHistory();
                     break;
                 case 2:
                     return;

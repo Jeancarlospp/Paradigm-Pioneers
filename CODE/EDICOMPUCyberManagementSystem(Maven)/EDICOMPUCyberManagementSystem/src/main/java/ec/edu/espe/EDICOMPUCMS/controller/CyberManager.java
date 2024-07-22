@@ -28,25 +28,19 @@ public class CyberManager {
         Computer computer = getComputerById(id);
         if (computer != null && !computer.isActive()) {
             computer.start();
-            System.out.println("Computer " + id + " is now active.");
-        } else {
-            System.out.println("Computer " + id + " is already active or does not exist.");
         }
     }
 
-    public void stopComputer(int id) {
+    public double stopComputer(int id) {
         Computer computer = getComputerById(id);
         if (computer != null && computer.isActive()) {
             computer.stop();
-            System.out.println("Computer " + id + " has been stopped.");
-            
-            // Registrar el historial de uso
             double cost = computer.calculateCost();
             History entry = new History(computer.getId(), computer.getStartTime(), computer.getEndTime(), cost);
             history.add(entry);
-        } else {
-            System.out.println("Computer " + id + " is already inactive or does not exist.");
+            return cost;
         }
+        return 0.0;
     }
 
     public boolean isComputerActive(int id) {
@@ -56,11 +50,11 @@ public class CyberManager {
 
     public String getComputerActiveTime(int id) {
         Computer computer = getComputerById(id);
-        if (computer != null && computer.isActive()) {
+        if (computer != null) {
             Duration duration = computer.getActiveDuration();
             long hours = duration.toHours();
-            long minutes = duration.toMinutes() % 60;
-            long seconds = duration.getSeconds() % 60;
+            long minutes = duration.toMinutesPart();
+            long seconds = duration.toSecondsPart();
             return String.format("%02d:%02d:%02d", hours, minutes, seconds);
         }
         return "00:00:00";
@@ -74,38 +68,14 @@ public class CyberManager {
         return 0.0;
     }
 
-    public void showComputerStatus() {
-        for (Computer computer : computers) {
-            System.out.print("Computer " + computer.getId() + " is " +
-                             (computer.isActive() ? "active" : "inactive"));
-            if (computer.isActive()) {
-                Duration duration = computer.getActiveDuration();
-                long hours = duration.toHours();
-                long minutes = duration.toMinutes() % 60;
-                System.out.printf(" (Active duration: %d hours %d minutes)%n", hours, minutes);
-            } else if (computer.getActiveDuration().toMinutes() > 0) {
-                Duration duration = computer.getActiveDuration();
-                long hours = duration.toHours();
-                long minutes = duration.toMinutes() % 60;
-                double cost = computer.calculateCost();
-                System.out.printf(" (Last active duration: %d hours %d minutes, Cost: $%.2f)%n", hours, minutes, cost);
-            } else {
-                System.out.println();
-            }
-        }
-    }
-    
-    public void showHistory() {
-        System.out.println("\n========== Usage History ==========");
-        for (History entry : history) {
-            System.out.println(entry);
-        }
-    }
-
     private Computer getComputerById(int id) {
         return computers.stream()
                 .filter(c -> c.getId() == id)
                 .findFirst()
                 .orElse(null);
+    }
+
+    public List<History> getHistory() {
+        return new ArrayList<>(history);
     }
 }
