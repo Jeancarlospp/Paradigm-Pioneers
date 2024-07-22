@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.time.Duration;
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -96,12 +98,14 @@ public class PaymentsPanel extends JPanel {
 
         System.out.println("Filtered history size: " + filteredHistory.size()); // Debugging line
 
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(ZoneId.systemDefault());
+
         for (History entry : filteredHistory) {
             System.out.println("Entry: " + entry); // Debugging line
             tableModel.addRow(new Object[]{
                     entry.getComputerId(),
-                    entry.getStartTime(),
-                    entry.getEndTime(),
+                    formatter.format(entry.getStartTime()),
+                    formatter.format(entry.getEndTime()),
                     formatDuration(entry.getStartTime(), entry.getEndTime()),
                     "$" + df.format(entry.getCost())
             });
