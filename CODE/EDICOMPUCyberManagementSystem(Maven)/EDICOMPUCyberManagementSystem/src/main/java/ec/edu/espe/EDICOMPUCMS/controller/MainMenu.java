@@ -3,6 +3,7 @@ package ec.edu.espe.EDICOMPUCMS.controller;
 import ec.edu.espe.EDICOMPUCMS.view.CustomerManagementPanel;
 import ec.edu.espe.EDICOMPUCMS.view.CyberManagementPanel;
 import ec.edu.espe.EDICOMPUCMS.view.LoginScreen;
+import ec.edu.espe.EDICOMPUCMS.view.PaymentsPanel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class MainMenu extends JFrame {
+    private CyberManager cyberManager;
     private JPanel mainPanel;
     private CardLayout cardLayout;
     private JPanel sidePanel;
@@ -17,6 +19,8 @@ public class MainMenu extends JFrame {
     private JLabel clockLabel;
 
     public MainMenu() {
+        cyberManager = new CyberManager();
+        
         setTitle("EDICOMPU Cyber Management System");
         setSize(1000, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -159,11 +163,11 @@ public class MainMenu extends JFrame {
     }
 
     private JPanel createCyberManagementPanel() {
-        return new CyberManagementPanel();
+        return new CyberManagementPanel(cyberManager);
     }
 
     private JPanel createComputerRentalPanel() {
-        // Update this method to create a more detailed computer rental panel
+         // Update this method to create a more detailed computer rental panel
         JPanel panel = new JPanel(new BorderLayout());
         panel.add(new JLabel("Computer Rental", SwingConstants.CENTER), BorderLayout.NORTH);
         // Add more components for computer rental
@@ -171,11 +175,8 @@ public class MainMenu extends JFrame {
     }
 
     private JPanel createPaymentsPanel() {
-        // Update this method to create a more detailed payments panel
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.add(new JLabel("Payments", SwingConstants.CENTER), BorderLayout.NORTH);
-        // Add more components for payments management
-        return panel;
+        
+        return new PaymentsPanel(cyberManager);
     }
 
     private void logout() {

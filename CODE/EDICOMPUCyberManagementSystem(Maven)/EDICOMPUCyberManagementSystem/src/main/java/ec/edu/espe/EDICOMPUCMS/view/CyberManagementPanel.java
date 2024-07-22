@@ -8,6 +8,7 @@ import java.util.TimerTask;
 import java.text.DecimalFormat;
 
 public class CyberManagementPanel extends JPanel {
+    
     private CyberManager cyberManager;
     private JPanel computerGrid;
     private JTextArea activityLog;
@@ -20,7 +21,8 @@ public class CyberManagementPanel extends JPanel {
     private static final Font TITLE_FONT = new Font("Arial", Font.BOLD, 24);
     private static final Font REGULAR_FONT = new Font("Arial", Font.PLAIN, 12);
 
-    public CyberManagementPanel() {
+    public CyberManagementPanel(CyberManager cyberManager) {
+        this.cyberManager = cyberManager;
         cyberManager = new CyberManager();
         setLayout(new BorderLayout());
         setBackground(BACKGROUND_COLOR);

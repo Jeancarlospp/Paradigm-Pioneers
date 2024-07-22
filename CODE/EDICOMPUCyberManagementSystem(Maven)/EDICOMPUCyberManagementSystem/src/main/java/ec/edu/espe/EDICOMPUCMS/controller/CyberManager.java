@@ -10,6 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CyberManager {
+    private List<Runnable> historyUpdateListeners = new ArrayList<>();
+
+    public void addHistoryUpdateListener(Runnable listener) {
+        historyUpdateListeners.add(listener);
+    }
+
+    private void notifyHistoryUpdateListeners() {
+        for (Runnable listener : historyUpdateListeners) {
+            listener.run();
+        }
+    }
     private List<Computer> computers;
     private Tariff tariff;
     private List<History> history;
@@ -38,6 +49,7 @@ public class CyberManager {
             double cost = computer.calculateCost();
             History entry = new History(computer.getId(), computer.getStartTime(), computer.getEndTime(), cost);
             history.add(entry);
+            notifyHistoryUpdateListeners();
             return cost;
         }
         return 0.0;
