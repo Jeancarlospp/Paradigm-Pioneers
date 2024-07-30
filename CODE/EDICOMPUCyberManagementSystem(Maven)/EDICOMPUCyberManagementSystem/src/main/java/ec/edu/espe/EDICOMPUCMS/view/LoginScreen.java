@@ -1,22 +1,19 @@
 package ec.edu.espe.EDICOMPUCMS.view;
 
+import ec.edu.espe.EDICOMPUCMS.controller.CustomerManager;
 import ec.edu.espe.EDICOMPUCMS.controller.MainMenu;
 import ec.edu.espe.EDICOMPUCMS.model.Users;
 import javax.swing.*;
 import java.awt.*;
 
 public class LoginScreen extends JFrame {
-    private Users[] users;
+    private CustomerManager customerManager;
     private JTextField usernameField;
     private JPasswordField passwordField;
 
     public LoginScreen() {
-        this.users = new Users[]{
-        new Users("Jeancarlo", "jean2005"),
-        new Users("Andrea", "andrea2005"),
-        new Users("Leidy", "leidy2005"),
-        new Users("Kenned", "kenned2005")
-    };
+        this.customerManager = new CustomerManager();
+
         // Configurar el JFrame
         setTitle("Login");
         setSize(400, 500);
@@ -28,7 +25,7 @@ public class LoginScreen extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                ImageIcon icon = new ImageIcon("C:\\Users\\User\\Desktop\\ESPE-2DO\\POO-2DO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\fondoA.jpg");
+                ImageIcon icon = new ImageIcon("C:\\Users\\PACO\\OneDrive\\Universidad\\SEGUNDO SEMESTRE\\POO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\fondoA.jpg");
                 Image img = icon.getImage();
                 g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
             }
@@ -39,7 +36,7 @@ public class LoginScreen extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         // Agregar icono de usuario
-        JLabel userIcon = new JLabel(new ImageIcon("C:\\Users\\User\\Desktop\\ESPE-2DO\\POO-2DO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\Logotipo - EDICOMPU.png"));
+        JLabel userIcon = new JLabel(new ImageIcon("C:\\Users\\PACO\\OneDrive\\Universidad\\SEGUNDO SEMESTRE\\POO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\Logotipo - EDICOMPU.png"));
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 2;
@@ -103,6 +100,7 @@ public class LoginScreen extends JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 loginButton.setBackground(new Color(30, 144, 255)); // Azul más oscuro al pasar el mouse
             }
+
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 loginButton.setBackground(new Color(0, 149, 255)); // Volver al color original
             }
@@ -119,13 +117,12 @@ public class LoginScreen extends JFrame {
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Incorrect username or password", "Login Error", JOptionPane.ERROR_MESSAGE);
-                 usernameField.setText("");
-                 passwordField.setText("");
+                passwordField.setText("");
             }
         });
 
         // Botón de registro
-        JButton registerButton = new JButton("REGISTER");
+        JButton registerButton = new JButton("Register");
         registerButton.setBackground(new Color(24, 2, 64)); // Azul brillante
         registerButton.setForeground(Color.WHITE);
         registerButton.setFont(new Font("Arial", Font.BOLD, 14));
@@ -133,36 +130,35 @@ public class LoginScreen extends JFrame {
         gbc.gridwidth = 2;
         panel.add(registerButton, gbc);
 
-        // Efecto hover para el botón de registro
-        registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                registerButton.setBackground(new Color(30, 144, 255)); // Azul más oscuro al pasar el mouse
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                registerButton.setBackground(new Color(0, 149, 255)); // Volver al color original
+        // Acción del botón de registro
+        registerButton.addActionListener(e -> {
+            String username = usernameField.getText();
+            String password = new String(passwordField.getPassword());
+
+            if (username.isEmpty() || password.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Username and password cannot be empty", "Registration Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                Users newUser = new Users(username, password);
+                customerManager.addUser(newUser);
+                JOptionPane.showMessageDialog(null, "User registered successfully");
             }
         });
 
-        // Añadir panel al JFrame
+        // Agregar el panel al frame
         add(panel);
     }
 
-    // Método de autenticación
     private boolean authenticate(String username, String password) {
-        for (Users user : users) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                return true;
-            }
+        Users user = customerManager.getUser(username);
+        if (user != null && user.getPassword().equals(password)) {
+            return true;
         }
         return false;
     }
 
     public static void main(String[] args) {
-        // Iniciar con algunos usuarios por defecto
-    java.awt.EventQueue.invokeLater(() -> new LoginScreen().setVisible(true));
-    }
-
-    public void setUsers(Users[] users) {
-        this.users = users;
+        SwingUtilities.invokeLater(() -> {
+            new LoginScreen().setVisible(true);
+        });
     }
 }

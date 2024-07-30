@@ -56,7 +56,7 @@ public class MainMenu extends JFrame {
         mainPanel.add(createHomePanel(), "Home");
         mainPanel.add(createCustomersPanel(), "Customers");
         mainPanel.add(createCyberManagementPanel(), "CyberManagement");
-        mainPanel.add(createComputerRentalPanel(), "ComputerRental");
+        //mainPanel.add(createComputerRentalPanel(), "ComputerRental");
         mainPanel.add(createPaymentsPanel(), "Payments");
 
         // Create status bar
@@ -96,7 +96,7 @@ public class MainMenu extends JFrame {
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         panel.setBackground(new Color(26, 35, 126));
 
-        String[] buttonLabels = {"Home", "Customers", "Cyber Management", "Computer Rental", "Payments"};
+        String[] buttonLabels = {"Home", "Customers", "Cyber Management" /*"Computer Rental"*/, "Payments"};
         for (String label : buttonLabels) {
             JButton button = new JButton(label);
             button.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -166,13 +166,13 @@ public class MainMenu extends JFrame {
         return new CyberManagementPanel(cyberManager);
     }
 
-    private JPanel createComputerRentalPanel() {
+   /* private JPanel createComputerRentalPanel() {
          // Update this method to create a more detailed computer rental panel
         JPanel panel = new JPanel(new BorderLayout());
         panel.add(new JLabel("Computer Rental", SwingConstants.CENTER), BorderLayout.NORTH);
         // Add more components for computer rental
         return panel;
-    }
+    }*/
 
     private JPanel createPaymentsPanel() {
         
