@@ -77,7 +77,7 @@ public class CyberManagementPanel extends JPanel {
         panel.setBorder(BorderFactory.createLineBorder(ACCENT_COLOR, 1));
         panel.putClientProperty("computerId", id);
 
-        JLabel iconLabel = new JLabel(new ImageIcon("C:\\Users\\PACO\\OneDrive\\Universidad\\SEGUNDO SEMESTRE\\POO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\Compu.png"));
+        JLabel iconLabel = new JLabel(new ImageIcon("C:\\Users\\User\\Desktop\\ESPE-2DO\\POO-2DO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\Compu.png"));
         panel.add(iconLabel, BorderLayout.CENTER);
 
         JLabel statusLabel = createStyledLabel("Inactive", REGULAR_FONT, Color.RED);
