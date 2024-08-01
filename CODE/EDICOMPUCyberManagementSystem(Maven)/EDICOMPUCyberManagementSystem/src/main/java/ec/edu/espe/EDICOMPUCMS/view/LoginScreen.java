@@ -36,7 +36,7 @@ public class LoginScreen extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         // Agregar icono de usuario
-        JLabel userIcon = new JLabel(new ImageIcon("C:\\Users\\PACO\\OneDrive\\Universidad\\SEGUNDO SEMESTRE\\POO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\Logotipo - EDICOMPU.png"));
+        JLabel userIcon = new JLabel(new ImageIcon("C:\\Users\\User\\Desktop\\ESPE-2DO\\POO-2DO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\Logotipo - EDICOMPU.png"));
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 2;
