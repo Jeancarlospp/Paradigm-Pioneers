@@ -13,7 +13,7 @@ public class WelcomeScreen extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                ImageIcon icon = new ImageIcon("C:\\Users\\PACO\\OneDrive\\Universidad\\SEGUNDO SEMESTRE\\POO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\fondoA.jpg");
+                ImageIcon icon = new ImageIcon("C:\\Users\\User\\Desktop\\ESPE-2DO\\POO-2DO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\fondoA.jpg");
                 Image img = icon.getImage();
                 g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
             }
@@ -24,7 +24,7 @@ public class WelcomeScreen extends JFrame {
 
         // Logo (unchanged)
         JLabel logoLabel = new JLabel();
-        ImageIcon logoIcon = new ImageIcon("C:\\Users\\PACO\\OneDrive\\Universidad\\SEGUNDO SEMESTRE\\POO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\Logotipo - EDICOMPU.png");
+        ImageIcon logoIcon = new ImageIcon("C:\\Users\\User\\Desktop\\ESPE-2DO\\POO-2DO\\Paradigm-Pioneers\\CODE\\EDICOMPUCyberManagementSystem(Maven)\\Logotipo - EDICOMPU\\Logotipo - EDICOMPU.png");
         logoLabel.setIcon(logoIcon);
         gbc.gridx = 0;
         gbc.gridy = 0;
