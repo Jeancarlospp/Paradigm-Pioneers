@@ -1,15 +1,16 @@
 package ec.edu.espe.EDICOMPUCMS.controller;
-/**
- *
- * @author Leidy
- */
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+/**
+ *
+ * @author Leidy Saraguro,Paradigm Pioneers Squad, DCCO-ESPE
+ */
 
 public class ComputerBackupManager {
     private static final String FILE_NAME = "computer_backup.json";
