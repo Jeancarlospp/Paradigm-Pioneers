@@ -5,7 +5,6 @@ import ec.edu.espe.EDICOMPUCMS.model.History;
 import ec.edu.espe.EDICOMPUCMS.model.Tariff;
 
 import java.time.Duration;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +12,12 @@ public class CyberManager {
     private List<Runnable> historyUpdateListeners = new ArrayList<>();
     private List<Computer> computers;
     private Tariff tariff;
-    private List<History> history;
+    private HistoryManager historyManager;
 
     public CyberManager() {
         tariff = new Tariff(1.00, 0.15);  // 1 dólar por hora, tarifa mínima 15 centavos
         computers = new ArrayList<>();
-        history = new ArrayList<>();
+        historyManager = new HistoryManager();
         initializeComputers();
     }
 
@@ -48,16 +47,11 @@ public class CyberManager {
         if (computer != null && computer.isActive()) {
             computer.stop();
             double cost = computer.calculateCost();
-            addHistoryEntry(computer, cost);
+            historyManager.addHistoryEntry(computer, cost);
             notifyHistoryUpdateListeners();
             return cost;
         }
         return 0.0;
-    }
-
-    private void addHistoryEntry(Computer computer, double cost) {
-        History entry = new History(computer.getId(), computer.getStartTime(), computer.getEndTime(), cost);
-        history.add(entry);
     }
 
     public boolean isComputerActive(int id) {
@@ -90,6 +84,6 @@ public class CyberManager {
     }
 
     public List<History> getHistory() {
-        return new ArrayList<>(history);
+        return historyManager.getHistory();
     }
 }

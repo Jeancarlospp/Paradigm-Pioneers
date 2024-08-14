@@ -19,6 +19,7 @@ public class DatabaseConnection {
             System.out.println("Connected to MongoDB successfully");
         } catch (Exception e) {
             System.err.println("Error connecting to MongoDB: " + e.getMessage());
+            throw new RuntimeException("Failed to connect to MongoDB", e);
         }
     }
 
