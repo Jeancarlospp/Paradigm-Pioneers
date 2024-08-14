@@ -2,8 +2,6 @@ package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
 import ec.edu.espe.EDICOMPUCMS.model.History;
-import ec.edu.espe.EDICOMPUCMS.model.Tariff;
-
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +9,11 @@ import java.util.List;
 public class CyberManager {
     private List<Runnable> historyUpdateListeners = new ArrayList<>();
     private List<Computer> computers;
-    private Tariff tariff;
+    private TariffManager tariffManager;
     private HistoryManager historyManager;
 
     public CyberManager() {
-        tariff = new Tariff(1.00, 0.15);  // 1 dólar por hora, tarifa mínima 15 centavos
+        tariffManager = new TariffManager(1.00, 0.15);  // 1 dólar por hora, tarifa mínima 15 centavos
         computers = new ArrayList<>();
         historyManager = new HistoryManager();
         initializeComputers();
@@ -23,7 +21,7 @@ public class CyberManager {
 
     private void initializeComputers() {
         for (int i = 1; i <= 10; i++) {
-            computers.add(new Computer(i, tariff));
+            computers.add(new Computer(i, tariffManager.getTariff()));
         }
     }
 
