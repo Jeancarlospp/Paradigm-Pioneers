@@ -2,12 +2,13 @@ package ec.edu.espe.EDICOMPUCMS.controller;
 
 import ec.edu.espe.EDICOMPUCMS.model.Computer;
 import ec.edu.espe.EDICOMPUCMS.model.History;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CyberManager {
-    private List<Runnable> historyUpdateListeners = new ArrayList<>();
+    private ListenerManager listenerManager;    
     private List<Computer> computers;
     private TariffManager tariffManager;
     private HistoryManager historyManager;
@@ -16,6 +17,7 @@ public class CyberManager {
         tariffManager = new TariffManager(1.00, 0.15);  // 1 dólar por hora, tarifa mínima 15 centavos
         computers = new ArrayList<>();
         historyManager = new HistoryManager();
+        listenerManager = new ListenerManager();
         initializeComputers();
     }
 
@@ -26,11 +28,11 @@ public class CyberManager {
     }
 
     public void addHistoryUpdateListener(Runnable listener) {
-        historyUpdateListeners.add(listener);
+        listenerManager.addHistoryUpdateListener(listener);
     }
 
     private void notifyHistoryUpdateListeners() {
-        historyUpdateListeners.forEach(Runnable::run);
+        listenerManager.notifyHistoryUpdateListeners();
     }
 
     public void startComputer(int id) {
