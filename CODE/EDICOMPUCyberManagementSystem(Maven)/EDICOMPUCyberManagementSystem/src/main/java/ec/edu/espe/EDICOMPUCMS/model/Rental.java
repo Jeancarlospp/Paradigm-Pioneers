@@ -1,7 +1,7 @@
 package ec.edu.espe.EDICOMPUCMS.model;
 /**
  *
- * Paradigm Pioneers Squad, DCCO-ESPE
+ * Andrea Raura, Paradigm Pioneers Squad, DCCO-ESPE
  */
 public class Rental {
     private int rentalID;
